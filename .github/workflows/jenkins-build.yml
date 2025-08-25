@@ -18,4 +18,4 @@ jobs:
 
     steps:
     - name: Build with Jenkins
-      run: D:\Users\agimenez\Applications\Java\jdk-17.0.16+8\bin\java -jar jenkins-cli.jar -auth admin:jenkins -s http://localhost:8080/ build course-info-spring-jf
+      run: D:\Users\agimenez\Applications\Java\jdk-17.0.16+8\bin\java -jar D:\Users\agimenez\Documents\ejercicio3\jenkins-cli.jar -auth admin:jenkins -s http://localhost:8080/ build course-info-spring-jf
