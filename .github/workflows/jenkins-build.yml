@@ -1,0 +1,21 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Java CI with Jenkins
+
+on:
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ "develop" ]
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+    - name: Build with Jenkins
+      run: D:\Users\agimenez\Applications\Java\jdk-17.0.16+8\java -jar jenkins-cli.jar -auth admin:jenkins -s http://localhost:8080/ build course-info-spring-jf
