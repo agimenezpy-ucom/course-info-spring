@@ -1,16 +1,16 @@
 pipeline {
-    agent {
-        docker {
-            image 'maven:3.9.9-eclipse-temurin-21'
-            args '-v $HOME/.m2:/root/.m2'
-        }
-    }
+    agent any
 
     stages {
 
         stage('Build') {
+            agent {
+                docker {
+                    image 'maven:3.9.9-eclipse-temurin-21'
+                    args '-v $HOME/.m2:/root/.m2'
+                }
+            }
             steps {
-                
                 // Run Maven on a Unix agent.
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
             
@@ -37,7 +37,9 @@ pipeline {
         stage('Publish') {
             steps {
                 script { 
-                    docker.build('course-web-info:1.0-SNAPSHOT')
+                     docker.withRegistry('https://index.docker.io/v1/', 'docker-login') {
+                        docker.build('agimenezpyucom/course-web-info').push('1.0-SNAPSHOT')
+                     }
                 }        
             }
         }    
