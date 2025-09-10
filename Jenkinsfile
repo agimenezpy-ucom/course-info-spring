@@ -13,9 +13,7 @@ pipeline {
                 
                 // Run Maven on a Unix agent.
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
-            }
-
-            steps {
+                
                 docker.build('.')
             }
 
@@ -36,5 +34,11 @@ pipeline {
                 } 
             }
         }
+
+        stage('Publish') {
+            steps {
+                docker.build('.')
+            }
+        }    
     }
 }
