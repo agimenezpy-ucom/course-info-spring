@@ -37,7 +37,8 @@ pipeline {
 
         stage('Publish') {
             steps {
-                docker.build('.')
+                script { 
+                    docker.build('course-web-info:${env.BUILD_ID}')
             }
         }    
     }
