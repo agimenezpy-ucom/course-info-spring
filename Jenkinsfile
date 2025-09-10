@@ -39,6 +39,7 @@ pipeline {
             steps {
                 script { 
                     docker.build('course-web-info:${env.BUILD_ID}')
+                }        
             }
         }    
     }
