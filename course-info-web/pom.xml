@@ -36,13 +36,13 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.version}</version>
                 <executions>
-                <execution>
-                    <goals>
-                        <goal>build-info</goal>
-                        <goal>repackage</goal>
-                    </goals>
-                </execution>
-            </executions>
+                    <execution>
+                        <goals>
+                            <goal>build-info</goal>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
         <resources>
@@ -50,7 +50,7 @@
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
             </resource>
-        </resource>
+        </resources>
     </build>
 
 </project>
