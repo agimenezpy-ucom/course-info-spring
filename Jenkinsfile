@@ -10,6 +10,7 @@ pipeline {
                     args '-v $HOME/.m2:/root/.m2'
                 }
             }
+
             steps {
                 // Run Maven on a Unix agent.
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"

@@ -35,7 +35,21 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>build-info</goal>
+                        <goal>repackage</goal>
+                    </goals>
+                </execution>
+            </executions>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resource>
     </build>
 
 </project>
